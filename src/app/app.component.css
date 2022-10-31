@@ -1,0 +1,36 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    background-color: #1b2736;
+    color: white;
+ }
+  .a1{
+    margin-left: 250px;
+    padding-top: 200px;
+    font-size: 30px;
+  }
+  .div{
+    margin-top: 50px;
+  }
+  .a2{
+    float: right;
+    margin-right: 250px;
+    font-size: 30px;
+  }
+  @media screen and (max-width: 500px) {
+    .a1{
+        margin-left: 20px;
+        padding-top: 0px;
+        font-size: 20px;
+      }
+     
+      .a2{
+        float: right;
+        margin-right: 20px;
+        font-size: 20px;
+      }
+  }
+ 

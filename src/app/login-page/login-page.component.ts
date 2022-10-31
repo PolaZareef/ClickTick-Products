@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { LoginServiceService } from '../services/login-service.service';
-
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -12,16 +9,30 @@ import { LoginServiceService } from '../services/login-service.service';
 export class LoginPageComponent implements OnInit {
   email:string='';
   password:string='';
-  constructor(private loginService:LoginServiceService,private http: HttpClient, private router: Router) { }
+  constructor(private loginService:LoginServiceService,private router: Router) { }
 
   ngOnInit(): void {
     
   }
 
   login(){
+    if(this.email==="" && this.password==="")
+    {
+      alert("Please Enter your Email and Password...!");
+      return;
+    }
     this.loginService.login(this.email,this.password);
     this.email='';
     this.password='';
+  }
+  home(){
+    if(this.loginService.isLogin===true)
+    {
+      this.router.navigate(["home"]);
+    }
+    else{
+      alert("Please Login with your Account...!");
+    }
   }
 
 }

@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 })
 export class LoginServiceService {
 
+  isLogin:boolean=false;
+
   constructor(private http: HttpClient, private router: Router) { }
 
   login(email:string,password:string){
@@ -18,13 +20,14 @@ export class LoginServiceService {
       });
       console.log(user);
       if(user){
-        alert('Login Succesful');
+        this.isLogin=true;
+        alert('Login Succesful...');
         this.router.navigate(["home"]);
       }else{
-        alert("user not found");
+        alert("user not found...!");
       }
     },err=>{
-      alert("Something went wrong");
+      alert("Something went wrong...!");
     })
   }
 
