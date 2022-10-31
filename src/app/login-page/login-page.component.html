@@ -1,0 +1,14 @@
+<div class="login">
+    <h1>&#9745;</h1>
+    <h1>Log in to your Account</h1>
+     <p>Welcome Back! Please enter your Details</p>
+      <form #form="ngForm" (ngSubmit)="login()">
+        <div>
+          <label for="email">Email</label><br>
+          <input  required name="email" type="text" placeholder="Enter your Email..." [(ngModel)]="email"><br>
+          <label for="password">Password</label><br>
+          <input  type="password" name="password" placeholder="*************" [(ngModel)]="password"><br>
+        </div><br>
+        <button type="button" (click)="login()">Sign in</button>
+      </form>
+  </div>
