@@ -22,24 +22,6 @@ export class LoginPageComponent implements OnInit {
     this.loginService.login(this.email,this.password);
     this.email='';
     this.password='';
-   /* this.http.get<any>("https://dummyjson.com/users")
-    .subscribe(res=>{
-      console.log(res);
-      const user =res.users.find((a:any)=>{
-        return a.email === this.email && a.password === this.password ;
-      });
-      console.log(user);
-      if(user){
-        alert('Login Succesful');
-        this.email='';
-        this.password='';
-        this.router.navigate(["home"]);
-      }else{
-        alert("user not found");
-      }
-    },err=>{
-      alert("Something went wrong");
-    })*/
   }
 
 }
