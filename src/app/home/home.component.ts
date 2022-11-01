@@ -11,11 +11,11 @@ export class HomeComponent implements OnInit {
   products:any[]=[];
   products1:any[]=[];
   category:any[]=[];
-  search:string="";
+  searchTitle:string="";
   searchCategory:string="";
   orderNumber:number=0;
 
-  constructor(private productService:ProductServiceService,private http:HttpClient,private router: Router) { }
+  constructor(private http:HttpClient,private router: Router) { }
 
   ngOnInit(): void {
     //get data of products from products api when this component render
@@ -36,8 +36,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  home(){
-    this.search="";
+  home(){//get data of products from server if remove search text and click home
+    this.searchTitle="";
     this.http.get<any>("https://dummyjson.com/products")
     .subscribe(res=>{
       this.products=res.products;
@@ -50,10 +50,10 @@ export class HomeComponent implements OnInit {
   }
   searching(){
     //searching based on product title
-    console.log(this.search);
+    console.log(this.searchTitle);
     for(let i=0;i<this.products.length;i++)
     {
-      if(this.products[i].title.toLowerCase()===this.search.toLocaleLowerCase())
+      if(this.products[i].title.toLowerCase()===this.searchTitle.toLocaleLowerCase())
       {
         this.products1.push(this.products[i]);
       }

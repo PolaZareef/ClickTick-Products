@@ -6,14 +6,14 @@
             <form>
                 <div class="form-group has-search">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" name="search" class="form-control" placeholder="Search" [(ngModel)]="search" (change)="searching()">
+                    <input type="text" name="search" class="form-control" placeholder="Search" [(ngModel)]="searchTitle" (change)="searching()">
                     <i class="fa fa-shopping-cart"><span class="num">{{orderNumber}}</span></i>
                 </div>
             </form>
           </div>
     </div>
 </div>
-
+<h1 style="text-align:center">{{searchTitle}}</h1>
 <div class="grid-container">
     <div class="item1">
         <h3>Products</h3>
