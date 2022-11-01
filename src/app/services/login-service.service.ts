@@ -9,8 +9,10 @@ export class LoginServiceService {
 
   isLogin:boolean=false;
 
+  //Inject Http and router services to get and route
   constructor(private http: HttpClient, private router: Router) { }
 
+  //this function responsaible for get data for login from users api to check authrntication
   login(email:string,password:string){
     this.http.get<any>("https://dummyjson.com/users")
     .subscribe(res=>{

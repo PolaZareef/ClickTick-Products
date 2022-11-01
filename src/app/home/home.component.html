@@ -1,15 +1,39 @@
 <div class="header">
     <a href="#default" class="logo">&#9745; ClickTik</a>
-    <a class="active" href="#home" (click)="home()">Home</a>
+    <a class="active" (click)="home()">Home</a>
     <div class="header-right">
         <div class="search-container">
             <form>
                 <div class="form-group has-search">
                     <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control" placeholder="Search">
-                    <i class="fa fa-shopping-cart"></i>
+                    <input type="text" name="search" class="form-control" placeholder="Search" [(ngModel)]="search" (change)="searching()">
+                    <i class="fa fa-shopping-cart"><span class="num">{{orderNumber}}</span></i>
                 </div>
             </form>
           </div>
     </div>
 </div>
+
+<div class="grid-container">
+    <div class="item1">
+        <h3>Products</h3>
+        <div *ngFor="let cat of category">
+            <input type="checkbox" title="category" name="category">{{cat}}
+        </div>
+
+    </div>
+    <div class="item2" *ngFor="let product of products">
+        <span class="percentage">-{{product.discountPercentage}}%</span>
+        <img src={{product.images[0]}} title="image">
+        <div class="div">
+            <h3>{{product.title}}</h3>
+            <p>{{product.description}}</p>
+            <p><b style="text-decoration-line: line-through;">{{product.price}} USD</b> <b style="padding-left: 20px;">{{product.price*(product.discountPercentage/100)}}</b> USD</p>
+            <p>Brand:<b>{{product.brand}}</b></p>
+            <p>Category:<b>{{product.category}}</b></p>
+            <p>in Stock:<b>{{product.stock}}</b></p>
+            <p style="float: right; color:#fdd835;">&#11088;<b>{{product.rating}}</b></p>
+        </div>
+        <button type="button" (click)="addToCard()">ADD TO CART</button>
+    </div>
+  </div>

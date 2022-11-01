@@ -14,7 +14,8 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
+  /*check for inputs from users and check validation and authentication
+  and call login method from login service */
   login(){
     if(this.email==="" && this.password==="")
     {
@@ -25,6 +26,7 @@ export class LoginPageComponent implements OnInit {
     this.email='';
     this.password='';
   }
+  //navigate to home component when click home after check validate of login
   home(){
     if(this.loginService.isLogin===true)
     {
