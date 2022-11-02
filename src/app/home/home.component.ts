@@ -36,17 +36,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  home(){//get data of products from server if remove search text and click home
-    window.location.reload();
-    this.router.navigate(["/home"]);
+  searchingCategory(index:number){
+    //searching based on selected category from product list
+    this.category1.push(this.category[index]);
+    this.products1=this.products.filter(item=>this.category1.includes(item.category));
+    this.products=this.products1;
+    this.products1=[];
   }
-
-
-  addToCard(){
-    //add number of order to card
-    this.orderNumber+=1;
-  }
-
 
   searchingName(){
     //searching based on product title by enter all name of product
@@ -62,11 +58,13 @@ export class HomeComponent implements OnInit {
   }
   
 
-  searchingCategory(index:number){
-    //searching based on selected category from product list
-    this.category1.push(this.category[index]);
-    this.products1=this.products.filter(item=>this.category1.includes(item.category));
-    this.products=this.products1;
-    this.products1=[];
+  home(){//get data of products from server if remove search text and click home
+    window.location.reload();
+    this.router.navigate(["/home"]);
+  }
+
+  addToCard(){
+    //add number of order to card
+    this.orderNumber+=1;
   }
 }
