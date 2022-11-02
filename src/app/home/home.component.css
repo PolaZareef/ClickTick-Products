@@ -93,6 +93,8 @@
     position: absolute;
     padding: 1px;
     margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
 }
 .grid-container {
     display: grid;
@@ -111,6 +113,7 @@
 .div{
     max-height: 290px;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
   .item1 {
     grid-row-start: span 10;
@@ -161,4 +164,16 @@
         margin-left: 0px;
         display: inline-block;
       }
+      .item1 {
+        width: 150px;
+        font-size: 20px;
+      }
+      .has-search .form-control {
+        width: 220px;
+    }
+    .fa-shopping-cart{
+        font-size: 25px;
+        height: 30px;
+      }
+
   }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductServiceService } from '../services/product-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 @Component({
@@ -10,8 +9,6 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   products:any[]=[];
   products1:any[]=[];
-  products2:any[]=[];
-
   category:any[]=[];
   category1:any[]=[];
   searchTitle:string="";
