@@ -15,6 +15,7 @@ form{
 }
 input{
     margin-bottom: 10px;
+    font-size: large;
     width: 40%;
     height: 45px;
     border-radius: 10px;

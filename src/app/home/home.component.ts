@@ -46,13 +46,7 @@ export class HomeComponent implements OnInit {
 
   searchingName(){
     //searching based on product title by enter all name of product
-    for(let i=0;i<this.products.length;i++)
-    {
-      if(this.products[i].title.toLowerCase()===this.searchTitle.toLocaleLowerCase())
-      {
-        this.products1.push(this.products[i]);
-      }
-    }
+    this.products1=this.products.filter(item=>this.searchTitle.includes(item.title));
     this.products=this.products1;
     this.products1=[];
   }
