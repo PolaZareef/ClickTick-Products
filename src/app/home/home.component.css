@@ -82,6 +82,10 @@
     border-radius: 5px;
     position: relative;
 }
+.categ{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
 .num{
     background-color: #0b9aed;
     border-radius: 10px;
@@ -106,6 +110,7 @@
 }
 .div{
     max-height: 290px;
+    margin-top: 50px;
 }
   .item1 {
     grid-row-start: span 10;

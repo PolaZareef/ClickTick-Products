@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   products:any[]=[];
   products1:any[]=[];
+  products2:any[]=[];
+
   category:any[]=[];
+  category1:any[]=[];
   searchTitle:string="";
   searchCategory:string="";
   orderNumber:number=0;
@@ -37,20 +40,19 @@ export class HomeComponent implements OnInit {
   }
 
   home(){//get data of products from server if remove search text and click home
-    this.searchTitle="";
-    this.http.get<any>("https://dummyjson.com/products")
-    .subscribe(res=>{
-      this.products=res.products;
-  });
+    window.location.reload();
     this.router.navigate(["/home"]);
   }
+
+
   addToCard(){
     //add number of order to card
     this.orderNumber+=1;
   }
-  searching(){
-    //searching based on product title
-    console.log(this.searchTitle);
+
+
+  searchingName(){
+    //searching based on product title by enter all name of product
     for(let i=0;i<this.products.length;i++)
     {
       if(this.products[i].title.toLowerCase()===this.searchTitle.toLocaleLowerCase())
@@ -60,7 +62,14 @@ export class HomeComponent implements OnInit {
     }
     this.products=this.products1;
     this.products1=[];
-    console.log(this.products);   
   }
+  
 
+  searchingCategory(index:number){
+    //searching based on selected category from product list
+    this.category1.push(this.category[index]);
+    this.products1=this.products.filter(item=>this.category1.includes(item.category));
+    this.products=this.products1;
+    this.products1=[];
+  }
 }
